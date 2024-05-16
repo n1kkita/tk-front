@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Groups</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <h1>Groups</h1>
+    <img src="/static/logo.svg" width="200" height="200" alt="Logo">
+</header>
+<nav class="link-bar">
+    <button class="toggle-btn">&#9776;</button>
+
+    <div class="sidenav">
+        <div class="content-center">
+            <ul class="links">
+                <button style="margin-left: 45px;" class="toggle-btn">&#9776;</button>
+                <li class="link"><a href="home.html">Back to home</a></li>
+                <li class="link"><a href="doc.html">Back to doc</a></li>
+                <li class="link"><a href="groups.html">Back to groups</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <ul class="links lg">
+        <li class="link"><a href="home.html">Back to home</a></li>
+        <li class="link"><a href="doc.html">Back to doc</a></li>
+        <li class="link"><a href="groups.html">Back to groups</a></li>
+    </ul>
+</nav>
+<h3 id="account-username" class="content-center"></h3>
+<div class="groups-container" id="available-groups">
+</div>
+<div class="form-container">
+    <h3 id="account"></h3>
+    <h2>Create a New Group</h2>
+    <p>Use the form below to create a new groupEntity:</p>
+    <form id="create-group-form">
+        <div class="form-group">
+            <label for="group-name-create">Group Name:</label>
+            <input id="group-name-create" type="text" name="name" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Create</button>
+        </div>
+    </form>
+</div>
+<script src="/static/nav-bar.js"></script>
+<script src="groups.js"></script>
+<script>
+
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    console.log(userData);
+    document.getElementById("account-username").textContent=userData.username;
+
+    fetch(`/users/${userData.username}`).then(r=>r.json()).then(data=>{
+        data.groups.forEach(group=>{
+            let linkToNewGroupEl = document.createElement("div");
+
+            linkToNewGroupEl.innerHTML =
+                `<div class="text-container group-link">
+                  <div>
+                  <a>${group.name}</a>
+                 </div>
+                 <div>
+                 →
+                 </div>
+               </div>`;
+            linkToNewGroupEl.addEventListener("click", function () {
+                window.location.href = `calendar?name=${group.name}&id=${group.id}`;
+            });
+            linkToNewGroupEl.addEventListener("click", function () {
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const nameGroup = urlParams.get('name');
+
+
+                console.log(nameGroup);
+            });
+            availableGroups.prepend(linkToNewGroupEl);
+        })
+    })
+
+</script>
+</body>
+
+</html>

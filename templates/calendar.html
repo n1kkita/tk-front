@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Calendar</title>
+</head>
+<body>
+<header>
+    <img src='/static/logo.svg' width='200' height='200' alt='Logo'>
+    <h2 id="group-name">Group Name</h2>
+</header>
+<nav class="link-bar">
+    <button class="toggle-btn">&#9776;</button>
+
+    <div class="sidenav">
+        <div class="content-center">
+            <ul class="links">
+                <button style="margin-left: 45px;" class="toggle-btn">&#9776;</button>
+                <li class="link"><a href="home.html">Back to home</a></li>
+                <li class="link"><a href="doc.html">Back to doc</a></li>
+                <li class="link"><a href="groups.html">Back to groups</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <ul class="links lg">
+        <li class="link"><a href="home.html">Back to home</a></li>
+        <li class="link"><a href="doc.html">Back to doc</a></li>
+        <li class="link"><a href="groups.html">Back to groups</a></li>
+    </ul>
+</nav>
+<div class="content-center" style="margin-top: 10px;">
+    <div class="text-container">
+        <section>
+            <h2>About Group Calendar</h2>
+            <p>Welcome to the Group Calendar page. Here you can view and manage all scheduled events and tasks for your groupEntity.</p>
+            <p>Use the calendar above to view events by month, week, or day. You can also click on an event to view more details or add new events to the calendar.</p>
+            <p>Stay organized and keep track of important deadlines and meetings with the Group Calendar!</p>
+        </section>
+    </div>
+</div>
+
+<div class="content-center" style="margin-top: 10px;">
+    <div class="text-container">
+        <section>
+            <p>Tap or pinch and swipe over the dates you want to create a task</p>
+        </section>
+    </div>
+</div>
+<div id='calendar'></div>
+
+<div id="task-modal-create" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Create a new task</h2>
+        <form id="task-form-create">
+            <label for="task-title-create">Title:</label><br>
+            <input type="text" id="task-title-create" name="task-title" maxlength="20"><br>
+
+            <label for="task-description-create">Description:</label><br>
+            <textarea id="task-description-create" name="task-description" rows="4" cols="50"></textarea><br>
+
+            <label for="start-date-create">Start:</label><br>
+            <input type="date" id="start-date-create" name="start-date"><br><br>
+
+            <label for="end-date-create">End:</label><br>
+            <input type="date" id="end-date-create" name="end-date" ><br><br>
+
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+
+<div id="task-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Task Info</h2>
+        <form id="task-form">
+            <p>Заголовок задачі:</p>
+            <div class="text-container" style="max-width: 15%" id="task-title"></div>
+            <p>Опис:</p>
+            <div class="text-container" id="task-description"></div>
+            <p>Початок:</p>
+            <div class="text-container" style="max-width: 15%" id="start-date"></div>
+            <p>Кінець:</p>
+            <div class="text-container" style="max-width: 15%" id="end-date"></div>
+        </form>
+    </div>
+</div>
+
+<script src="/static/nav-bar.js"></script>
+<script src="/static/calendar-app.js"></script>
+</body>
+</html>

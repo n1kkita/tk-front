@@ -1,0 +1,190 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+/*===== HOME =====*/
+.home {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --body-font: 'Open Sans', sans-serif;
+  --biggest-font-size: 3.3rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+  --first-color: #0396A6;
+  --dark-color: #000;
+  --white-color: #3b3b3b;
+}
+
+
+.home_parallax {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat; /* Запобігає повторенню фонового зображення */
+  background-size: cover; /* Масштабує фонове зображення так, щоб воно вмістилося в елемент */
+  background-position: center; /* Вирівнює фонове зображення по центру */
+}
+
+
+.home_parallax-img1 {
+  background-image: url("head.png");
+  z-index: var(--z-normal);
+}
+
+
+.home_parallax-img2 {
+  background-image: url("body.png");
+  z-index: var(--z-tooltip);
+}
+
+
+.home_parallax-img3 {
+  background-image: url("bottom.png");
+  z-index: var(--z-fixed);
+}
+
+
+.home_title, .home_subtitle {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: center;/* Вирівнює елементи гнучкого контейнера по горизонталі по центру */
+      -ms-flex-pack: center;/* Вирівнює елементи гнучкого контейнера по горизонталі по центру */
+          justify-content: center;/* Вирівнює елементи по горизонталі по центру */
+  color: var(--white-color);
+}
+
+.home_title {
+  top: 32%;
+  font-size: var(--biggest-font-size);
+  z-index: var(--z-normal);
+}
+
+.home_subtitle {
+  top: 44%;
+  font-size: var(--h2-font-size);
+  font-weight: bold;
+  z-index: var(--z-tooltip);
+}
+
+.home_scroll .bx-mouse {
+  color: var(--white-color);
+}
+
+.home_scroll {
+  position: absolute; /* Встановлює позицію елемента в абсолютних координатах відносно найближчого позиціонованого елемента */
+  bottom: 1.0rem; /* Встановлює відстань від нижнього краю елемента до нижнього краю контейнера */
+  width: 100%; /* Встановлює ширину елемента на всю доступну ширину контейнера */
+  display: flex; /* Встановлює розміщення елементів у блочному вигляді */
+  -webkit-box-pack: center; /* Вирівнює елементи гнучкого контейнера по горизонталі по центру */
+  -ms-flex-pack: center; /* Вирівнює елементи гнучкого контейнера по горизонталі по центру */
+  justify-content: center; /* Вирівнює елементи по горизонталі по центру */
+  font-size: 1.5rem; /* Встановлює розмір шрифту 1.5rem */
+  z-index: var(--z-modal); /* Встановлює значення z-index відповідно до значення змінної --z-modal */
+}
+
+.section {
+  height: 100vh;
+  max-width: 950px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 2rem 0;
+  color: var(--white-color);
+  display: flex;
+  -webkit-box-orient: vertical; /* Встановлює орієнтацію гнучкого контейнера по вертикалі */
+  -webkit-box-direction: normal; /* Встановлює напрямок вмісту гнучкого контейнера */
+  -ms-flex-direction: column; /* Встановлює напрямок вмісту гнучкого контейнера */
+  flex-direction: column; /* Встановлює напрямок вмісту гнучкого контейнера */
+  -webkit-box-pack: space-evenly; /* Вирівнює елементи гнучкого контейнера по вертикалі з рівномірним розміщенням */
+  -ms-flex-pack: space-evenly; /* Вирівнює елементи гнучкого контейнера по вертикалі з рівномірним розміщенням */
+  justify-content: space-evenly; /* Вирівнює елементи по вертикалі з рівномірним розміщенням */
+  -webkit-box-align: center; /* Вирівнює елементи гнучкого контейнера по горизонталі по центру */
+  -ms-flex-align: center; /* Вирівнює елементи гнучкого контейнера по горизонталі по центру */
+  align-items: center; /* Вирівнює елементи по горизонталі по центру */
+}
+
+/* Стили для скроллбара */
+::-webkit-scrollbar {
+  width: 6px; /* Ширина скроллбара */
+}
+
+/* Стили для скроллбара при наведении */
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Цвет фона скроллбара при наведении */
+}
+
+/* Стили для трека (линии) скроллбара */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Прозрачный фон трека скроллбара */
+}
+
+/* Стили для ползунка (полосы прокрутки) скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Цвет ползунка скроллбара */
+  border-radius: 6px; /* Радиус скругления углов ползунка */
+  border: 2px solid transparent; /* Прозрачная граница ползунка */
+}
+
+/* Стили для ползунка (полосы прокрутки) скроллбара при наведении */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Цвет ползунка скроллбара при наведении */
+}
+
+@media screen and (min-width: 1200px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .home_title {
+    top: 27%;
+  }
+  .section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --biggest-font-size: 7rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*===== BASE =====*/
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

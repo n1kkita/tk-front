@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <h1>Home</h1>
+    <img src ="/static/logo.svg" width="200" height="200" alt="Logo">
+</header>
+<nav class="link-bar">
+    <button class="toggle-btn">&#9776;</button>
+
+    <div class="sidenav">
+        <div class="content-center">
+            <ul class="links">
+                <button style="margin-left: 45px;" class="toggle-btn">&#9776;</button>
+                <li class="link"><a href="home.html">Back to home</a></li>
+                <li class="link"><a href="doc.html">Back to doc</a></li>
+                <li class="link"><a href="groups.html">Back to groups</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <ul class="links lg">
+        <li class="link"><a href="home.html">Back to home</a></li>
+        <li class="link"><a href="doc.html">Back to doc</a></li>
+        <li class="link"><a href="groups.html">Back to groups</a></li>
+    </ul>
+</nav>
+<h3 id="account-username" class="content-center"></h3>
+<div class="content-center" style="margin-top: 10px; ">
+    <div class="text-container" style="max-width: 60%">
+        <div style="font-family: 'Roboto', sans-serif; background-color: white; padding: 10px;">
+            <p>TaskManager is a project aimed at managing tasks and organizing work processes. This system allows you to effectively organize tasks for yourself, your team, or employees, track their performance, and plan your workflow.</p>
+
+            <p style="font-weight: bold">Features:</p>
+            <ul>
+                <li>Create tasks and assign them to individuals or groups.</li>
+                <li>Set deadlines and priorities for tasks.</li>
+                <li>Track the progress of tasks and receive notifications.</li>
+                <li>Collaborate with team members in real-time.</li>
+                <li>Generate reports and analytics on task performance.</li>
+            </ul>
+
+            <p>Get started today and streamline your workflow with Task Manager!</p>
+
+            <p>For more details, check out the <a href="/doc">Documentation</a> or manage your <a href="/groups">Groups</a>.</p>
+        </div>
+
+    </div>
+</div>
+<script src="/static/nav-bar.js"></script>
+<script>
+
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    document.getElementById("account-username").textContent=userData.username;
+
+</script>
+</body>
+</html>
