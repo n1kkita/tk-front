@@ -70,7 +70,10 @@ let calendar = new FullCalendar.Calendar(calendarEl, {
         displayTaskInfo(event.title,event.extendedProps.description,event.start,event.end);
     }
 });
-fetch(`https://2b75-31-128-76-55.ngrok-free.app/tasks/group/${idGroup}`)
+fetch(`https://2b75-31-128-76-55.ngrok-free.app/tasks/group/${idGroup}`,{method: "GET",
+    headers: new Headers({
+        "ngrok-skip-browser-warning": "69420",
+    })})
     .then(r=>r.json())
     .then(tasks=>{
         tasks.forEach(task=>{
