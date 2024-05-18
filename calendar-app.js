@@ -2,9 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         selectable: true,
-        headerToolbar: {
-            center: 'title',
-        },
         locale: 'uk',
         droppable: true,
         eventStartEditable: true,
