@@ -46,19 +46,19 @@ h1, h2, h3, p {
 
 
 .home_parallax-img1 {
-  background-image: url("head.png");
+  background-image: url("head.webp");
   z-index: var(--z-normal);
 }
 
 
 .home_parallax-img2 {
-  background-image: url("body.png");
+  background-image: url("body.webp");
   z-index: var(--z-tooltip);
 }
 
 
 .home_parallax-img3 {
-  background-image: url("bottom.png");
+  background-image: url("bottom.webp");
   z-index: var(--z-fixed);
 }
 
