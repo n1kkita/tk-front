@@ -8,5 +8,6 @@
     <orderEntry type="library" name="boxicons" level="application" />
     <orderEntry type="library" name="gsap" level="application" />
     <orderEntry type="library" name="scrollreveal" level="application" />
+    <orderEntry type="library" name="fullcalendar" level="application" />
   </component>
 </module>
