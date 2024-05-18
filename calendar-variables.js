@@ -8,6 +8,7 @@ const taskModal = document.getElementById('task-modal');
 const urlParams = new URLSearchParams(window.location.search);
 const nameGroup = urlParams.get('name');
 const idGroup = urlParams.get('id');
+let calendar;
 
 
 document.getElementById('group-name').textContent = nameGroup;
