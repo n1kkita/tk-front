@@ -41,17 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    function displayTaskInfo(title, description, start, end) {
-
-        let titleEl = document.getElementById("task-title");
-        let descriptionEl = document.getElementById("task-description");
-        let startEl = document.getElementById("start-date");
-        let endEl = document.getElementById("end-date");
-        titleEl.textContent = title;
-        descriptionEl.textContent = description;
-        startEl.textContent = formatDateForTaskModal(start);
-        endEl.textContent = formatDateForTaskModal(end);
-    }
 
     document.querySelectorAll(".close").forEach(span => {
         span.onclick = function () {
@@ -60,4 +49,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function displayTaskInfo(title, description, start, end) {
+
+    let titleEl = document.getElementById("task-title");
+    let descriptionEl = document.getElementById("task-description");
+    let startEl = document.getElementById("start-date");
+    let endEl = document.getElementById("end-date");
+    titleEl.textContent = title;
+    descriptionEl.textContent = description;
+    startEl.textContent = formatDateForTaskModal(start);
+    endEl.textContent = formatDateForTaskModal(end);
+}
 
