@@ -16,7 +16,7 @@ createGroupForm.addEventListener("submit",function (ev) {
     }
     console.log(groupData);
 
-    fetch(`https://2fd2-31-128-77-84.ngrok-free.app/groups`, {
+    fetch(`https://11e3-176-241-157-85.ngrok-free.app/groups`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

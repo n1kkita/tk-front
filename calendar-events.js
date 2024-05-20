@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log(taskDto);
 
-        fetch(`https://2fd2-31-128-77-84.ngrok-free.app/tasks`, {
+        fetch(`https://11e3-176-241-157-85.ngrok-free.app/tasks`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

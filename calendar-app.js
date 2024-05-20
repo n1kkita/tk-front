@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    fetch(`https://2fd2-31-128-77-84.ngrok-free.app/tasks/group/${idGroup}`, {
+    fetch(`https://11e3-176-241-157-85.ngrok-free.app/tasks/group/${idGroup}`, {
         method: "GET",
         headers: new Headers({
             "ngrok-skip-browser-warning": "69420",
