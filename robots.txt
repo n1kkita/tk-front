@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /groups
+Disallow: /gpsi
+Disallow: /calendar
+Disallow: /home
+
+Allow: /
+Allow: /Sign-in
+Allow: /Sign-up
+
+Sitemap: https://n1kkita.github.io/tk-front/sitemap.xml
