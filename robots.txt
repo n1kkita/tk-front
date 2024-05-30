@@ -8,4 +8,4 @@ Allow: /
 Allow: /Sign-in
 Allow: /Sign-up
 
-Sitemap: https://n1kkita.github.io/tk-front/sitemap.xml
+Sitemap: https://n1kkita.github.io/tk-front/Sitemap.xml
